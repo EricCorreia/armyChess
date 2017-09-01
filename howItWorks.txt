@@ -1,0 +1,95 @@
+// WHAT TO DO
+// - build game Board
+// - make mock up army to test with
+// - Create the process of the differnt acts of the turn
+// - then make sure controlls are all good inculding having all the units clickable on the side.
+// - Test and make sure it all works (give it to kylee and tim to also test)
+// - make website look pretty
+// - make more armies
+// - make army special ablites
+// - update git regurally
+
+
+// HOW GAME WILL LOOK
+// - game board will be chess like with more spaces. (either 10 by 10 or 10 by 15)
+// - game will have units that are just little tiles with symbols on it and the wound count.
+      // - the little shapes generals used to show troop movmenents on maps.
+      // - they were a square with a tringle on it that pointed in the way they were facing
+// - some units wounds will be how many mens are in the unit and others will be the health of a single unit
+// - thinking of having units for both sides on the left and right so you can click on them for fast clicking and for better display
+// - game score and account names above game board.
+
+
+// DISCRIPTION OF game
+// - Board broken into 10 by 10 blocks (or more)
+// - You get one side each to place your units up to 10(dependent on units chosen that will take up slots)
+// - maybe give first 2 rows to for placeing units
+// - Underneth field will be small control pannel for controlling units.
+      // - up down left right controls
+      // - hold position button
+      // - melee or shoot. (shooting will have a set range)
+      // - maybe special attack buttons (if possible)
+      // - may have secound face for placing units that goes before the first turn with 10 or 20 buttons.
+// - allows movement of units(some can move further)
+
+// BEFORE GAME
+// - you and the secound player can log in if wanted or log in as guest but nothing is saved
+// - each choose faction one after another
+// - Then people build armies based on unit cost (number for total funds not figured out)
+// - Once one player is done they lock in then the next player can choose units.
+
+// ORDER OF HOW GAME STARTS
+// 1. Once game starts first thing it does it build the board in html5 canvas
+        // - first grid is built
+        // - then put background in background
+        // - Then activate music if put on
+        // - after allow unit placement
+// 2. it reads what units you have and lets you place them.
+        // - There will be a list on either side or bottom with all your units
+        // - click the one you wish to place,
+                // - if clickable, place it on the board by clicking on space, and then the thing will lose color to show you cant use it.
+                // - If not the bottom control will turn into 20 or 10 buttons depending on spaces and let you click where they will go
+        // - Once all the units are done it will end your turn auto maticly
+// 3. lets your opponent do it
+        // - same systems will keep going.
+// 4. randomly chooses who goes first
+        // - It will be a random number generator and half of the numbers will choose one and the rest will do the other
+// 5. Allows person to move all units or hold position
+        // - First you will have to select a unit
+        // - then hit one of the directions for your unit to move
+                // - or hit hold position for them to stand still
+        // - once movement is done automaticly lets you choose next
+        // - after movement is done next part goes automaticly
+// 6. Can attack with units
+        // - Can only choose to do shoot or melee
+        // - once chosen you choose oponent you wish to hit
+        // - SHOOTING
+                // - it does a simple calculation (damage - armor = extra, extra + damage = chace)
+                // - Then rolls a number between 1-10 and if the chance is higher then the number damage was done
+                // - then unit selected loses that many wounds.
+        // - MELEE
+                // - can only be done to unit 3 spaces away
+                // - any unit with shooting can fire overwatch at charging unit but only hit on 8-10
+                        // - This will work by looking at the units amount of shots then rolling for them
+                        // - This is to make melee risky but there will be units that are really good at melee
+                // - will roll a number 1-10, if 1-3 can go 1 space, if 4-6 can go 2 spaces, if 7-10 it can go full distance
+                // - if you can not get to enemy you do not make it
+// 7. After all units attack (may have specials after this if possible like airstrike)
+        // - maybe give each faction specials they can do
+// 8. Opponents turn
+        // - everything that happened in the first players turn will happen in secound player
+// 9. Ends when one person has no units left.
+        // - Game will look at a game victory condition varrible(weither that be annilation or some kind of point system) if not met will reset to player 1s turn
+        // - Have it look between each players turn if one player does not have any units if none end game.
+
+// - counts score based on units killed
+// - counts games won on account
+// - save favoirte faction to account
+// - save army rosters too accounts
+
+// HOW STUFF IS STORED
+// - army will be stored in an array as an object and all there stats will be stored elsewere that is reachable by the game
+        // - each unit will have their own id that will help the game find the stats faster
+        // - may have certain stats stored on the object of the units
+// - account stuff like games won, favoirte army and saved armies will be stored in one database
+// - There will be an active game database to store the stats of all active units and their wounds
