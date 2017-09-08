@@ -36,6 +36,13 @@
 // - you and the secound player can log in if wanted or log in as guest but nothing is saved
 // - each choose faction one after another
 // - Then people build armies based on unit cost (number for total funds not figured out)
+        // - Select formation that will auto put your units
+        // - Then it will let you select units based on your fomation
+                // - Have a mock board that will fill and show what you will have on the board
+                // - It will highlight the area you are gonna place and wait for input
+                // - once done it goes to next spot and wait for input till all spots are filled
+                // - Each will have one hero which is just really powerful
+                // - It will store the info of the starting spots to be used when game lanches
 // - Once one player is done they lock in then the next player can choose units.
 
 // ORDER OF HOW GAME STARTS
