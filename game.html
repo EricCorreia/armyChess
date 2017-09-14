@@ -1,15 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
+
     <head>
         <meta charset="utf-8" />
-        <title>Game Board</title>
+        <title>Army Chess</title>
+        <link rel="stylesheet" href='./assets/css/style.css'>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     </head>
+
     <body onload='draw();'>
+      <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <h1>Army Chess</h1>
+          </div>
 
-        <div>
-            <canvas id="chess" width="900" height="900"></canvas>
+            <form class="navbar-form navbar-left">
+            </form>
+            <ul class="nav navbar-nav navbar-right">
+              <li><h2>Facebook<h2></li>
+            </ul>
+      </nav>
+
+      <div class='jumbotron'>
+        <div class='gameBoard'>
+            <canvas id="chess" width="800" height="800"></canvas>
         </div>
+        <div class='statBoard'>
+          <ui>
+            <li><p>YOUR PIECE</p></li>
+            <li><p>Name = <span id='nameInfo'></span> </p></li>
+            <li><p>Wound = <span id='woundInfo'></span></p> </li>
+            <li><p>Damage = <span id='damageInfo'></span></p> </li>
+            <li><p>Armor = <span id='armorInfo'></span></p> </li>
+            <li><p>ENEMEY PIECE</p></li>
+            <li><p>Name = <span id='nameEnemey'></span> </p></li>
+            <li><p>Wound = <span id='woundEnemey'></span></p> </li>
+            <li><p>Damage = <span id='damageEnemey'></span></p> </li>
+            <li><p>Armor = <span id='armorEnemey'></span></p> </li>
+        </div>
+      </div>
 
-        <script src='./assets/js/game.js'></script>
+      <script src='./assets/js/game.js'></script>
     </body>
 </html>

@@ -1,5 +1,5 @@
-var numOfCol = 9,
-		numOfRows = 9,
+var numOfCol = 8,
+		numOfRows = 8,
 		blockSize = 100;
 
 var blockColor1 = '#AB6D4C',
@@ -97,52 +97,41 @@ function canCastleMoveToBlock(selectedPiece, clickedBlock, enemyPiece) {
 	var iRowToMoveTo = (currentTurn === firstPlayer ? clickedBlock.row : clickedBlock.row);
 	var bNextRowEmpty = (clickedBlock.col === selectedPiece.col && blockOccupied(clickedBlock) === false);
 
-	if (!enemyPiece){
-				return clickedBlock.col === iColToMoveTo &&
-						(bNextColEmpty === true) ||
-							 clickedBlock.row === iRowToMoveTo &&
-							 		(bNextRowEmpty === true ) ||
-
-			 } else {
-				 console.log("I can not let you do that dave")
-			 }
-
-	}
-
-function canQueenMoveToBlock(selectedPiece, clickedBlock, enemyPiece) {
-	var iColToMoveTo = (currentTurn === firstPlayer ? clickedBlock.col : clickedBlock.col);
-	var	bNextColEmpty = (clickedBlock.row === selectedPiece.row && blockOccupied(clickedBlock) === false);
-	var iRowToMoveTo = (currentTurn === firstPlayer ? clickedBlock.row : clickedBlock.row);
-	var bNextRowEmpty = (clickedBlock.col === selectedPiece.col && blockOccupied(clickedBlock) === false);
+	console.log(selectedPiece);
+	console.log(clickedBlock);
 
 	if (!enemyPiece){
 				return clickedBlock.col === iColToMoveTo &&
 						(bNextColEmpty === true) ||
 							 clickedBlock.row === iRowToMoveTo &&
 							 		(bNextRowEmpty === true )
-			 } else {
-				 console.log("I can not let you do that dave")
-			 }
-
-	}
-
-function canBishopMoveToBlock(selectedPiece, clickedBlock, enemyPiece) {
-	var iColToMoveTo = (currentTurn === firstPlayer ? clickedBlock.col : clickedBlock.col);
-	var	bNextColEmpty = (clickedBlock.row === selectedPiece.row && blockOccupied(clickedBlock) === false);
-	var iRowToMoveTo = (currentTurn === firstPlayer ? clickedBlock.row : clickedBlock.row);
-	var bNextRowEmpty = (clickedBlock.col === selectedPiece.col && blockOccupied(clickedBlock) === false);
-
-	if (!enemyPiece){
-				return clickedBlock.col === iColToMoveTo &&
-						(bNextColEmpty === true) ||
-							 clickedBlock.row === iRowToMoveTo &&
-							 		(bNextRowEmpty === true ) ||
 
 			 } else {
 				 console.log("I can not let you do that dave")
 			 }
 
 	}
+
+	function canRoukeMoveToBlock(selectedPiece, clickedBlock, enemyPiece) {
+		var iColToMoveTo = (currentTurn === firstPlayer ? clickedBlock.col : clickedBlock.col);
+		var	bNextColEmpty = (clickedBlock.row === selectedPiece.row && blockOccupied(clickedBlock) === false);
+		var iRowToMoveTo = (currentTurn === firstPlayer ? clickedBlock.row : clickedBlock.row);
+		var bNextRowEmpty = (clickedBlock.col === selectedPiece.col && blockOccupied(clickedBlock) === false);
+
+		console.log(selectedPiece);
+		console.log(clickedBlock);
+
+		if (!enemyPiece){
+					return clickedBlock.col === iColToMoveTo &&
+							(bNextColEmpty === true) ||
+								 clickedBlock.row === iRowToMoveTo &&
+								 		(bNextRowEmpty === true )
+
+				 } else {
+					 console.log("I can not let you do that dave")
+				 }
+
+		}
 
 function canSelectedMoveToBlock(selectedPiece, clickedBlock, enemyPiece) {
 	var bCanMove = false;
@@ -169,6 +158,8 @@ function canSelectedMoveToBlock(selectedPiece, clickedBlock, enemyPiece) {
 
 	case PIECE_BISHOP:
 
+		// calculate that its moving diagonal by telling it to get the absolute number of the differnece between the
+		// clickedBlock and selectedPiece and only alow movement if they equal eachother
 		bCanMove = canBishopMoveToBlock(selectedPiece, clickedBlock, enemyPiece);
 
 		break;
@@ -288,106 +279,151 @@ function defaultPositions() {
 					"row": 0,
 					"col": 0,
 					"status": IN_PLAY,
-					"wound": 10,
-					"damage": 7,
-					"armor": 3
+					"wound": 2,
+					"damage": 3,
+					"armor": 2
 				},
 				{
 					"piece": PIECE_ROUKE,
 					"row": 0,
 					"col": 1,
-					"status": IN_PLAY
+					"status": IN_PLAY,
+					"wound": 2,
+					"damage": 3,
+					"armor": 2
 				},
 				{
 					"piece": PIECE_BISHOP,
 					"row": 0,
 					"col": 2,
-					"status": IN_PLAY
+					"status": IN_PLAY,
+					"wound": 2,
+					"damage": 3,
+					"armor": 2
 				},
 				{
 					"piece": PIECE_KING,
 					"row": 0,
 					"col": 3,
-					"status": IN_PLAY
+					"status": IN_PLAY,
+					"wound": 2,
+					"damage": 3,
+					"armor": 2
 				},
 				{
 					"piece": PIECE_QUEEN,
 					"row": 0,
 					"col": 4,
-					"status": IN_PLAY
+					"status": IN_PLAY,
+					"wound": 2,
+					"damage": 3,
+					"armor": 2
 				},
 				{
 					"piece": PIECE_BISHOP,
 					"row": 0,
 					"col": 5,
-					"status": IN_PLAY
+					"status": IN_PLAY,
+					"wound": 2,
+					"damage": 3,
+					"armor": 2
 				},
 				{
 					"piece": PIECE_ROUKE,
 					"row": 0,
 					"col": 6,
-					"status": IN_PLAY
+					"status": IN_PLAY,
+					"wound": 2,
+					"damage": 3,
+					"armor": 2
 				},
 				{
 					"piece": PIECE_CASTLE,
 					"row": 0,
 					"col": 7,
-					"status": IN_PLAY
+					"status": IN_PLAY,
+					"wound": 2,
+					"damage": 3,
+					"armor": 2
 				},
 				{
 					"piece": PIECE_PAWN,
 					"row": 1,
 					"col": 0,
-					"status": IN_PLAY
+					"status": IN_PLAY,
+					"wound": 2,
+					"damage": 3,
+					"armor": 2
 				},
 				{
 					"piece": PIECE_PAWN,
 					"row": 1,
 					"col": 1,
-					"status": IN_PLAY
+					"status": IN_PLAY,
+					"wound": 2,
+					"damage": 3,
+					"armor": 2
 				},
 				{
 					"piece": PIECE_PAWN,
 					"row": 1,
 					"col": 2,
-					"status": IN_PLAY
+					"status": IN_PLAY,
+					"wound": 2,
+					"damage": 3,
+					"armor": 2
 				},
 				{
 					"piece": PIECE_PAWN,
 					"row": 1,
 					"col": 3,
-					"status": IN_PLAY
+					"status": IN_PLAY,
+					"wound": 2,
+					"damage": 3,
+					"armor": 2
 				},
 				{
 					"piece": PIECE_PAWN,
 					"row": 1,
 					"col": 4,
-					"status": IN_PLAY
+					"status": IN_PLAY,
+					"wound": 2,
+					"damage": 3,
+					"armor": 2
 				},
 				{
 					"piece": PIECE_PAWN,
 					"row": 1,
 					"col": 5,
-					"status": IN_PLAY
+					"status": IN_PLAY,
+					"wound": 2,
+					"damage": 3,
+					"armor": 2
 				},
 				{
 					"piece": PIECE_PAWN,
 					"row": 1,
 					"col": 6,
-					"status": IN_PLAY
+					"status": IN_PLAY,
+					"wound": 2,
+					"damage": 3,
+					"armor": 2
 				},
 				{
 					"piece": PIECE_PAWN,
 					"row": 1,
-					"col": 8,
-					"status": IN_PLAY
+					"col": 7,
+					"status": IN_PLAY,
+					"wound": 2,
+					"damage": 3,
+					"armor": 2
 				}
 			],
 		"black":
 			[
 				{
 					"piece": PIECE_CASTLE,
-					"row": 8,
+					"row": 7,
 					"col": 0,
 					"status": IN_PLAY
 				},
@@ -486,7 +522,6 @@ function defaultPositions() {
 }
 
 function selectPiece(pieceAtBlock) {
-	// Draw outline
 	ctx.lineWidth = selectLineWidth;
 	ctx.strokeStyle = highlightColor;
 	ctx.strokeRect((pieceAtBlock.col * blockSize) + selectLineWidth,
@@ -495,6 +530,42 @@ function selectPiece(pieceAtBlock) {
 		blockSize - (selectLineWidth * 2));
 
 	selectedPiece = pieceAtBlock;
+
+	document.getElementById('woundInfo').innerHTML= selectedPiece.wound;
+	document.getElementById('damageInfo').innerHTML= selectedPiece.damage;
+	document.getElementById('armorInfo').innerHTML= selectedPiece.armor;
+
+	switch (selectedPiece.piece) {
+		case 0:
+			pieceName = 'Pawn'
+			document.getElementById('nameInfo').innerHTML= pieceName
+			break;
+		case 1:
+			pieceName = 'Rooke'
+			document.getElementById('nameInfo').innerHTML= pieceName
+			break;
+		case 2:
+			pieceName = 'Knight'
+			document.getElementById('nameInfo').innerHTML= pieceName
+			break;
+		case 3:
+			pieceName = 'Bishop'
+			document.getElementById('nameInfo').innerHTML= pieceName
+			break;
+		case 4:
+			pieceName = 'Queen'
+			document.getElementById('nameInfo').innerHTML= pieceName
+			break;
+		case 1:
+			pieceName = 'King'
+			document.getElementById('nameInfo').innerHTML= pieceName
+			break;
+
+	}
+
+
+
+
 }
 
 function checkIfPieceClicked(clickedBlock) {
@@ -536,7 +607,41 @@ function processMove(clickedBlock) {
 	} else if (canSelectedMoveToBlock(selectedPiece, clickedBlock, enemyPiece) === true) {
 		movePiece(clickedBlock, enemyPiece);
 	}
+	document.getElementById('woundEnemey').innerHTML= enemyPiece.wound;
+	document.getElementById('damageEnemey').innerHTML= enemyPiece.damage;
+	document.getElementById('armorEnemey').innerHTML= enemyPiece.armor;
+
+	switch (enemyPiece.piece) {
+		case 0:
+			EnemeyName = 'Pawn'
+			document.getElementById('nameEnemey').innerHTML= EnemeyName
+			break;
+		case 1:
+			EnemeyName = 'Rooke'
+			document.getElementById('nameEnemey').innerHTML= EnemeyName
+			break;
+		case 2:
+			EnemeyName = 'Knight'
+			document.getElementById('nameEnemey').innerHTML= EnemeyName
+			break;
+		case 3:
+			EnemeyName = 'Bishop'
+			document.getElementById('nameEnemey').innerHTML= EnemeyName
+			break;
+		case 4:
+			EnemeyName = 'Queen'
+			document.getElementById('nameEnemey').innerHTML= EnemeyName
+			break;
+		case 1:
+			EnemeyName = 'King'
+			document.getElementById('nameEnemey').innerHTML= EnemeyName
+			break;
+
+	}
+
 }
+
+
 
 function board_click(ev) {
 	var x = ev.clientX - canvas.offsetLeft,

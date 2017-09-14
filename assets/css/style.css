@@ -1,1 +1,24 @@
+body {
+  background-color: red;
+}
 
+.jumbotron {
+  background-color: red;
+  margin-left: auto;
+  margin-right: auto;
+  width: 1200px;
+}
+
+.gameBoard {
+  padding-left: 15px;
+  float: left;
+}
+
+.statBoard {
+  margin: auto;
+  overflow: auto;
+  width: 350px;
+  height: 800px;
+  padding: 10px;
+  border: 1px solid black;
+}
